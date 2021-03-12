@@ -1,15 +1,16 @@
+{% block content %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Users</title>
 	</head>
 	<body>
-		<form action="" method="POST">
+		<form method="POST">
 			{% csrf_token %}
-			<table>
-    			{{ form.as_table }}
-			</table>
-			<input type="submit" name="register" value="Register" />
+			{{ form|crispy }}
+			<input class="btn btn-outline-info" type="submit" class="form-control">
 		</form>
 	</body>
 </html>
+{% endblock content %}
